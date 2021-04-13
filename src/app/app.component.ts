@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import tippy, { Instance } from 'tippy.js';
+// FAILS
+import defaultImport, { Instance } from './example';
 // WORKS
-// import tippy from 'tippy.js';
-// import { Instance } from 'tippy.js';
+// import defaultImport from './example';
+// import { Instance } from './example';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,6 @@ export class AppComponent implements OnInit {
   @ViewChild('popup', { static: true }) popupContainer!: ElementRef<HTMLDivElement>;
 
   ngOnInit() {
-    this.tippyInstance = tippy(this.popupContainer.nativeElement);
+    this.tippyInstance = defaultImport(this.popupContainer.nativeElement);
   }
 }
